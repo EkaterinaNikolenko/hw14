@@ -5,7 +5,7 @@ function sumNum(arr){
     let sum = 0;
     let count = 0;
     for(let i = 0; i < arr.length; i++){
-        if(!isNaN(arr[i]) && arr[i] != true && arr[i] != false && arr[i] != null){
+        if(!isNaN(arr[i]) && typeof arr[i] !== 'boolean' && arr[i] !== null){
             sum += +arr[i];
             count++;
         }
@@ -74,10 +74,7 @@ function delItem(str, arr){
     for(let i = 0; i < arr.length; i++){
         let smth = str;
         for(let j = 0; j < smth.length; j++){
-            if(arr[i] == smth[j]){
-                str = smth.replaceAll(arr[i], '');
-                break;
-            }
+            str = smth.replaceAll(arr[i], '');
         }
     }
 
